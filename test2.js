@@ -15,7 +15,8 @@ function Sedan(name, speed, maxSpeed) {
     this.maxSpeed = maxSpeed;
 }
 
-Sedan.prototype.prototype = Vehicle
+Sedan.prototype = Object.create(Vehicle.prototype);
+Sedan.prototype.constructor = Sedan;
 Sedan.prototype.boost = function () {
     console.log(this.name + ' boost its speed at ' + this.maxSpeed);
 }
